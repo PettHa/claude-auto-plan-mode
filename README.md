@@ -20,6 +20,18 @@ While `permission_mode === "plan"` AND `~/.claude/auto-plan-tools` flag is prese
 
 Selecting any other mode (Default, Plan, Accept edits, Auto, Bypass permissions) clears the flag, so the auto-approve behavior is sticky to the mode and disappears when you switch off.
 
+## Compatibility
+
+| Surface | This plugin | UI extension |
+| :--- | :--- | :--- |
+| Claude Code CLI (terminal) | Works (slash command) | N/A — no picker UI |
+| VSCode + Anthropic Claude Code extension | Works (slash command or picker click) | Works (adds picker entry) |
+| Cursor (VSCode fork) | Works | Works (same extension API) |
+| JetBrains IDEs | Works (slash command) | Not supported — different plugin architecture and bundle |
+| Web (claude.ai/code) | Works (slash command) | Not supported — no client-side extension |
+
+In short: the plugin runs everywhere Claude Code does, because it's a normal Claude Code plugin (hook + slash command). The companion UI extension is VSCode-only, because it works by patching the Anthropic VSCode extension's webview bundle.
+
 ## Companion UI extension
 
 The mode-picker entry is provided by [claude-auto-plan-mode-ui](https://github.com/PettHa/claude-auto-plan-mode-ui), a small VSCode extension that patches the Claude Code webview to add the entry and forwards the picker click to this plugin's commands. The plugin works without the extension via the `/claude-auto-plan-mode:auto-plan-tools` slash command.
