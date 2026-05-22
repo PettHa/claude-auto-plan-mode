@@ -1,6 +1,6 @@
 {
   "name": "claude-auto-plan-mode",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Adds an \"Auto plan mode\" permission mode to Claude Code that auto-approves tool calls during planning, while still showing the standard Accept dialog for the plan itself. Pair with claude-auto-plan-mode-ui for the mode-picker entry in VSCode.",
   "author": { "name": "PettHa", "url": "https://github.com/PettHa" },
   "homepage": "https://github.com/PettHa/claude-auto-plan-mode",
